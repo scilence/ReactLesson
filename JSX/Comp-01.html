@@ -10,21 +10,37 @@
     </head>
     <body>
         <div id="app"></div>
+
         <script type="text/babel">
+            var props = {
+                style: { "color": "green" },
+                name: "D-World"
+            };
+
             var CreateComp = React.createClass({
+                // componenet initial state
                 getInitialState: function() {
                     return { clickNum: 0 };
                 },
+                // user definied method
                 handleClick:function(){
                     var num = this.state.clickNum;
                     num++;
                     this.setState({ clickNum: num });
                 },
+                handleChange: function() {
+                    //this.refs.txtName
+                },
+                propTypes: {
+                    name: React.PropTypes.string
+                },
+                // show view
                 render: function() {
                     return (
                     <div>
-                        <h1 onClick={this.handleClick}>Hello {this.props.name}!</h1>
+                        <h1 style={this.props.style} onClick={this.handleClick}>Hello {this.props.name ? this.props.name : "World"}!</h1>
                         <h2 style={{color:'red'}}>点击{this.props.name}次数：{this.state.clickNum}</h2>
+                        <input type="text" ref="txtName" onChange={this.handleChange} />
                     </div>
                     );
                 }
@@ -36,13 +52,14 @@
                         <div>
                             <h1>Hello world!</h1>
                             <CreateComp name="Ben" />
+                            <CreateComp {...props} />
                         </div>
                     );
                 }
             });
 
             ReactDOM.render(
-                <HelloComponent />,
+                <HelloComponent/>,
                 document.getElementById('app')
             );
 
