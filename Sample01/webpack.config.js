@@ -14,6 +14,7 @@ const paths = {
 
 // Webpack configuration
 module.exports = {
+  devtool: "source-map",
   entry: path.join(paths.JS, 'app.js'),
   output: {
     path: paths.DIST,
