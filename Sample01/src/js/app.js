@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import {BrowserRouter, Route, Link, NavLink} from 'react-router-dom';
+import {BrowserRouter, Route, Link, NavLink, Switch} from 'react-router-dom';
 // import { Router, Route, hashHistory } from 'react-dom'
 import createBrowserHistory from 'history/createBrowserHistory'
 
@@ -53,6 +53,7 @@ render((
   <div>
     <BrowserRouter basename="/" forceRefresh={!supportHistroy}>
       <div>
+        <Switch>
         <Route exact path="/" component={App}/>
         <Route path="/about" component={About}/>
         <Route path="/render" render={props => (
@@ -66,6 +67,7 @@ render((
           ? <h1>Matched - {props.pathname}</h1>
           : <h1>Not Matched - {props.pathname}</h1>
         )} />
+        </Switch>
       </div>
       
     </BrowserRouter>
