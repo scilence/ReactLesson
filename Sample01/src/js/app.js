@@ -4,41 +4,12 @@ import {BrowserRouter, Route, Link, NavLink, Switch} from 'react-router-dom';
 // import { Router, Route, hashHistory } from 'react-dom'
 import createBrowserHistory from 'history/createBrowserHistory'
 
+import Index from "./Index"
 import About from './About';
 
 import '../css/style.css';
 
-import reactIcon from '../assets/react-icon.png';
-
-
 const history = createBrowserHistory()
-
-export default class App extends Component{
-  render(){
-    return (
-      <div>
-        <h1>Hello World</h1>
-        <nav>
-          <Link to="/about" >About</Link>
-          <br/>
-          <Link to="/render" >Render</Link>
-          <br/>
-          <Link to="/user/Jolin" >User - Jolin</Link>
-          <br/>
-          <Link to={{
-            pathname: "/user",
-            search: "?uname=123",
-            state: { uid: 312 }
-          }} >User - Jolin2</Link>
-        </nav>
-        
-        
-
-        <img src={ reactIcon } alt='React Icon' />
-      </div>
-    );
-  }
-}
 
 const getConfirm = function(){
   window.confirm("Yes/No");
@@ -51,10 +22,12 @@ const User = ({match}) => { return <h1>Hello {match.params.username}</h1> };
 
 render((
   <div>
+
+    <div>HIHI</div>
     <BrowserRouter basename="/" forceRefresh={!supportHistroy}>
       <div>
+        <Route path="/" component={Index}/>
         <Switch>
-        <Route exact path="/" component={App}/>
         <Route path="/about" component={About}/>
         <Route path="/render" render={props => (
           <div>
@@ -71,6 +44,7 @@ render((
       </div>
       
     </BrowserRouter>
+
   </div>
   )
   , document.getElementById('app'));

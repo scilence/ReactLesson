@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink, Prompt } from 'react-router-dom'
+
+import reactIcon from '../assets/react-icon.png';
 
 export default class About extends Component {
     render() {
       return (
         <div>
             <h1>Hello in About</h1>
-            
-            <NavLink to="/about" activeStyle={{ color:'red'}} >My NavLink</NavLink>
+            <img src={ reactIcon } alt='React Icon' />
+            <Prompt message="Leave now?" />
         </div>
       );
     }
