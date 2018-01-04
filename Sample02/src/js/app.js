@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Link, NavLink, Switch} from 'react-router-dom';
 
 import About from './about';
 import Index from './index';
+import Main from './main';
 
 import '../css/style.css';
 
@@ -18,23 +19,14 @@ const supportHistroy = "pushState" in window.history;
 
 const User = ({match}) => { return <h1>Hello {match.params.username}</h1> };
 
-const handleTabChanged = (value) => {
-  console.log(value);
-}
-
 render((
   <div>
     <MuiThemeProvider>
       <BrowserRouter basename="/" forceRefresh={!supportHistroy}>
         <div>
-
-          <Tabs onChange={handleTabChanged}>
-            <Tab label="Home" value="home"/>
-            <Tab label="About" value="about" />
-          </Tabs>
-
-          <Route path="/" component={Index}/>
+          <Main />
           <Switch>
+              <Route exact path="/" component={Index}/>
               <Route path="/about" component={About}/>
           </Switch>
         </div>
