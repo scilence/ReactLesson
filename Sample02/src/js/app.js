@@ -26,8 +26,11 @@ render((
         <div>
           <Main />
           <Switch>
-              <Route exact path="/" component={Index}/>
-              <Route path="/about" component={About}/>
+              <Route exact path="/" component={Index}>
+              </Route>
+              <Route path="/about" component={About}>
+                
+              </Route>
           </Switch>
         </div>
         

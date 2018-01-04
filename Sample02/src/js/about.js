@@ -1,4 +1,5 @@
 import React , { Component } from "react";
+import {Route, Link} from 'react-router-dom';
 
 export default class About extends Component{
 
@@ -7,6 +8,19 @@ export default class About extends Component{
         return (
             <div>
                 <h1>About</h1>
+                <Link to="/about/1">Detail</Link>
+                <br />
+                <Link to="/">Home</Link>
+                <br />
+                {this.props.children}
+
+
+                <Route path="/about/:aid" render={(props) => (
+                  <div>
+                    <h2>About Detail: {props.aid} { console.log(props.aid)}</h2>
+                  </div>
+                )} >
+                </Route>
             </div>
         );
     }    
