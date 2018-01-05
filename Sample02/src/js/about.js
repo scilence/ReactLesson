@@ -15,9 +15,9 @@ export default class About extends Component{
                 {this.props.children}
 
 
-                <Route path="/about/:aid" render={(props) => (
+                <Route path="/about/:aid" render={props => (
                   <div>
-                    <h2>About Detail: {props.aid} { console.log(props.aid)}</h2>
+                    <h2>About Detail: {props.match.params.aid} { console.log(props)}</h2>
                   </div>
                 )} >
                 </Route>
