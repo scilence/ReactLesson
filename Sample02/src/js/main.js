@@ -19,6 +19,7 @@ class Main extends Component{
                 <Tabs onChange={this.handleTabsChanged}>
                     <Tab label="Home" value="/"/>
                     <Tab label="About" value="/about" />
+                    <Tab label="Cards" value="/cards" />
                 </Tabs>
             </div>
         );

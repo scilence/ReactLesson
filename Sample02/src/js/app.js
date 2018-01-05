@@ -12,6 +12,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from "react-tap-event-plugin";
 // import MyAwesomeReactComponent from './MyAwesomeReactComponent';
 import Tabs, { Tab } from "material-ui/tabs";
+import Cards from './cards';
 
 injectTapEventPlugin();
 
@@ -29,8 +30,8 @@ render((
               <Route exact path="/" component={Index}>
               </Route>
               <Route path="/about" component={About}>
-                
               </Route>
+              <Route path="/cards" component={Cards} />
           </Switch>
         </div>
         
