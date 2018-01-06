@@ -3,16 +3,40 @@ import React , { Component } from "react";
 import Paper from 'material-ui/Paper';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-
+import Subheader from 'material-ui/Subheader';
+import Divider from 'material-ui/Divider';
 
 const style = {
-    height: 100,
-    width: 100,
+    //height: 100,
+    //width: 100,
     margin: 20,
     textAlign: 'center',
     display: 'inline-block',
-  };
-  
+    "border-color": "red"
+};
+
+const Items = [
+    {
+        gid: 1,
+        title: "API Class",
+        date: "2018/02/21",
+        content: "今天是個好天氣, \n good day 1"
+    },
+    {
+        gid: 2,
+        title: "API Class 2",
+        date: "2018/03/21",
+        content: "今天是個好天氣, \n good day 2"
+    },
+    {
+
+        gid: 3,
+        title: "API Class 3",
+        date: "2018/05/21",
+        content: "今天是個好天氣, \n good day 3"
+    }
+
+];
 
 export default class Cards extends Component{
     
@@ -20,31 +44,25 @@ export default class Cards extends Component{
 
         return (
             <div>
-                <Paper style={style} zDepth={1}>
-                    <Card>
+                <Subheader>Course List</Subheader>
+                {Items.map(item => (
+                    <Card key={item.gid} >
                         <CardHeader
-                            title="URL Avatar"
-                            subtitle="Subtitle"
-                            avatar="images/jsa-128.jpg"
-                        />
-                        <CardMedia
-                            overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
-                        >
-                            <img src="images/nature-600-337.jpg" alt="" />
-                        </CardMedia>
-                        <CardTitle title="Card title" subtitle="Card subtitle" />
-                        <CardText>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                            Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-                            Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+                            title={item.title}
+                            subtitle={item.date}
+                            actAsExpander={true}
+                            showExpandableButton={true} />
+                        {/* <CardTitle title={item.title} subtitle={item.date} /> */}
+                        <CardText expandable={true} >
+                            {item.content}
                         </CardText>
                         <CardActions>
-                            <FlatButton label="Action1" />
-                            <FlatButton label="Action2" />
+                            <FlatButton label="Read" />
+                            <FlatButton label="Delete" />
                         </CardActions>
                     </Card>
-                </Paper>
+                ))
+                }
             </div>
         );
     }    
