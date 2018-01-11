@@ -1,4 +1,8 @@
-function sum(a, b){
+function sum(a, b, callback){
+    if(callback){
+        callback(a, b);
+    }
+
     return a + b;
 }
 
