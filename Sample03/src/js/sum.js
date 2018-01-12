@@ -1,9 +1,10 @@
 function sum(a, b, callback){
+    let c = 0;
     if(callback){
-        callback(a, b);
+        c = callback(a, b) || 0;
     }
 
-    return a + b;
+    return a + b + c;
 }
 
 export default sum;
