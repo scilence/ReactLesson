@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
-import {BrowserRouter, Route, Link, NavLink, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import About from './about';
 import Index from './index';
 import Main from './main';
+import Cards from './cards';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from "react-tap-event-plugin";

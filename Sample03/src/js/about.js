@@ -1,15 +1,14 @@
 import React , { Component } from "react";
 import {Route, Link} from 'react-router-dom';
 import Avatar from 'material-ui/Avatar';
-import FontIcon from 'material-ui/FontIcon';
 import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
 
 import {
     blue300,
-    indigo900,
+    //indigo900,
     orange200,
-    deepOrange300,
+    //deepOrange300,
     pink400,
     purple500,
   } from 'material-ui/styles/colors';
@@ -53,7 +52,7 @@ export default class About extends Component{
 
         return (
             <div>
-                <h1>About</h1>
+                <h1>About !</h1>
                 <Link to="/about/1">Detail</Link>
                 <br />
                 {this.props.children}

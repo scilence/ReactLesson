@@ -1,19 +1,10 @@
 import React , { Component } from "react";
 
-import Paper from 'material-ui/Paper';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Subheader from 'material-ui/Subheader';
 import Divider from 'material-ui/Divider';
 
-const style = {
-    //height: 100,
-    //width: 100,
-    margin: 20,
-    textAlign: 'center',
-    display: 'inline-block',
-    "border-color": "red"
-};
 
 const Items = [
     {
@@ -63,6 +54,7 @@ export default class Cards extends Component{
                     </Card>
                 ))
                 }
+                <Divider />
             </div>
         );
     }    

@@ -1,4 +1,4 @@
-import sum from "../src/js/sum";
+import sum from "../sum";
 
 test('adds 1 + 2 to equal 3', () => {
   expect(sum(1, 2)).toBe(3);    
@@ -14,7 +14,7 @@ test("test number", () => {
   const a = 100;
   expect(a).toBeGreaterThan(80);
   expect([100, 20]).toContain(a);
-})
+});
 
 describe("test mock", () => {
   beforeEach(() => {

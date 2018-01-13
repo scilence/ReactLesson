@@ -1,0 +1,26 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "commonjs": true,
+        "jest": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module",
+        "allowImportExportEverywhere": false,
+        "codeFrame": false
+    },
+    "parser": "babel-eslint",
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "strict": "off",
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error"
+    }
+}
