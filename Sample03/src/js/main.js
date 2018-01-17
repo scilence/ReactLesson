@@ -1,6 +1,6 @@
 import React , { Component } from "react"; 
 import Tabs, { Tab } from "material-ui/tabs";
-import { withRouter } from 'react-router-dom'
+//import { withRouter } from 'react-router-dom'
 
 class Main extends Component{
 
@@ -10,6 +10,9 @@ class Main extends Component{
     }
 
     handleTabsChanged(value){
+        if(this.props.onTabsChange){
+            this.props.onTabsChange(value);
+        }
         this.props.history.push(value);
     }
       
@@ -26,4 +29,4 @@ class Main extends Component{
     }
 }
 
-export default withRouter(Main);
+export default Main;
