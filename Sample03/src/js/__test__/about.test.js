@@ -46,7 +46,7 @@ test("sss", () => {
   expect(item.length).toBe(1);
   item.simulate("click");
   expect(props.onClick).toBeCalled();
-
+  
   //console.log(wrapper);
   //let item = testMain.root.find("[tabindex=1]");
   //item.simulate('click');
